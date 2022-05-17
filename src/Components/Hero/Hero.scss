@@ -1,0 +1,108 @@
+.Hero_section {
+    img {
+        max-width: 100%;
+    }
+
+    .Hero_container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 2em 20px;
+
+        .Hero_left {
+             display: flex;
+             justify-content: space-between;
+             flex-direction: column;
+
+         
+
+            .title_intro {
+             
+                color: var(--Medium-Gray);
+                font-weight: 500;
+                font-family: Epilogue;
+                
+               
+            }
+
+            .Hero_btn {
+                padding: 1.3em 2em;
+                background-color: var(--Almost-Black);
+                color: var(--Almost-White);
+                border-radius: 50px;
+
+                &:hover {
+                    cursor: pointer;
+                    border: 2px solid var(--Almost-Black);
+                    color: var(--Almost-Black);
+                    background-color: var(--Almost-White);
+                }
+            } 
+
+            }
+        }
+
+        .Hero_clients {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-top: 2em;
+        }
+    }
+
+$breakpoint-tablet: 768px;
+@media (min-width: $breakpoint-tablet) {
+    .Hero_container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        justify-content: space-between;
+        gap: 2em;
+        
+       .Hero_left {
+           align-items: flex-start;
+
+        .title {
+            font-size: 5vw;
+            line-height: 1.2;
+        }
+
+        .title_intro {
+            line-height: 1.5;
+            padding: 2em 0;
+            font-size: 20px;
+        }
+       }
+
+        .mobile {
+            display: none;
+        }
+    }
+}
+@media(max-width: $breakpoint-tablet) {
+    .Hero_container {
+        display: grid;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+        place-items: center;
+
+        .Hero_left {
+            padding: 2em 0;
+            align-items: center;
+
+            .title {
+                font-size: 2.2em;
+            }
+            .title_intro {
+                padding: 2em 0;
+                line-height: 1.6;
+            }
+        }
+    }
+    .desktop {
+        display: none;
+    }
+    .Hero_right {
+        grid-row: 1;
+    }
+}
