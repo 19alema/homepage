@@ -2,32 +2,9 @@ import React, {
   useState
 } from 'react'
 import "./Navbar.scss"
-import {
-  ReactComponent as Logo
-} from '../../Assets/images/logo.svg'
 
+import { logo,Iconreminder,IconArrowdown,Iconclosemenu,Icontodo,Iconplanning,Iconcalender ,Iconmenu,IconArrowup} from '../../Constants';
 
-
-import {
-  FaAngleDown,
-  FaAngleUp,
-  FaTimes,
-  FaBars
-} from "react-icons/fa";
-
-import {
-  BsFillCalendarCheckFill
-} from "react-icons/bs";
-import {
-  GrPlan
-} from "react-icons/gr"
-
-import {
-  FcTodoList
-} from "react-icons/fc";
-import {
-  IoMdNotifications
-} from "react-icons/io"
 
 function Navbar() {
   const [navbar, setNavbar] = useState(false);
@@ -61,15 +38,15 @@ function Navbar() {
     <div className="Navbar_container" >
       <div className="desktopNav_logo" style={styles}>
         <img src={
-          Logo
+          logo
         }
           alt="logo_icon" />
 
         <div className="Navbar_toggle" >
-          <FaBars style={{ cursor: "pointer" }} onClick={
+          <img src={Iconmenu} style={{ cursor: "pointer" }} onClick={
             () => setNavbar(true)
           }
-          />
+          alt="Hambargur_menu"/>
         </div>
 
         { /* desktop */}
@@ -94,23 +71,23 @@ function Navbar() {
                     onClick={
                       toggleLinks
                     }> Feature </p>
-                  {arrow ? <FaAngleUp /> : < FaAngleDown />}
+                  {arrow ? <img src={IconArrowup} alt={IconArrowup} /> : <img src={IconArrowdown} alt={IconArrowup} />}
                 </div>
 
                 {arrow && (<div className="subLinks">
                   <div className="subLink">
-                    <FcTodoList />
+                    <img src={Icontodo} alt="todo_icon" />
                     <p> Todo List </p>
                   </div>
                   <div className="subLink">
-                    <BsFillCalendarCheckFill />
+                    <img src={Iconcalender}  alt="Calender"/>
                     <p> Calender </p>
                   </div>
-                  <div className="subLink" >
-                    <IoMdNotifications />
+                  <div className="subLink">
+                    <img src={Iconreminder} alt="Reminder" />
                     <p> Reminder </p> </div>
                   <div className="subLink">
-                    <GrPlan />
+                   <img src={Iconplanning} alt="iconpalnning" />
                     <p> Planning </p>
                   </div>
                 </div>
@@ -135,7 +112,7 @@ function Navbar() {
                     onClick={
                       toggleDropdown
                     }> Company </p> {
-                    dropdown ? < FaAngleUp /> : < FaAngleDown />
+                    dropdown ? <img src={IconArrowup} alt={IconArrowup} /> : <img src={IconArrowdown} alt={IconArrowdown} />
                   } </div>
 
                 {
@@ -176,29 +153,29 @@ function Navbar() {
       {/* MOBILE NAVBAR */}
    <div className="Navbar_container">
         {navbar && (<div className="navlinks mobileNav" >
-          <FaTimes style={{ position: "fixed", right: "20px", top: "2em", cursor: "pointer" }} onClick={() => setNavbar(false)} />
+          <img src={Iconclosemenu} alt="close icon" style={{ position: "fixed", right: "20px", top: "2em", cursor: "pointer" }} onClick={() => setNavbar(false)} />
           <nav>
             <ul>
               <li className="links">
                 <div className="link" style={{ display: "flex", alignItems: "center" }}>
                   <p style={{ marginRight: "5px", cursor: "pointer" }} onClick={toggleLinks}> Feature </p>
-                  {arrow ? <FaAngleUp /> : <FaAngleDown />}
+                  {arrow ? <img src={IconArrowup} alt={IconArrowup} /> : <img src={IconArrowdown} alt={IconArrowdown} />}
                 </div>
 
                 {arrow && (<div className="subLinks">
                   <div className="subLink">
-                    <FcTodoList />
+                    <img src={Icontodo} alt="todo" />
                     <p> Todo List </p>
                   </div>
                   <div className="subLink">
-                    <BsFillCalendarCheckFill />
+                    <img src={Iconcalender} alt="Calender"/>
                     <p> Calender </p>
                   </div>
-                  <div className="subLink" >
-                    <IoMdNotifications />
+                  <div className="subLink">
+                    <img src={Iconreminder } alt="Icon reminder"/>
                     <p> Reminder </p> </div>
                   <div className="subLink">
-                    <GrPlan />
+                    <img src={Iconplanning}  alt="planning icon"/>
                     <p> Planning </p>
                   </div>
                 </div>
@@ -216,7 +193,7 @@ function Navbar() {
                   } >
                   <p style={{ marginRight: "5px", cursor: "pointer" }}
                     onClick={toggleDropdown}> Company </p> {
-                    dropdown ? <FaAngleUp /> : <FaAngleDown />
+                    dropdown ? <img src={IconArrowup} alt="angle up" /> : <img src={IconArrowdown} alt="Icon arrow down" />
                   } </div>
 
                 {

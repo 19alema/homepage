@@ -1,10 +1,7 @@
 import React from 'react'
 import "./Hero.scss"
-import {
-  ReactComponent as Clientdatabiz
-} from "../../Assets/images/client-databiz.svg";
 
-import {Clientaudiophile,Clientmaker, Clientmeet, Heromobile, Herodesktop} from "../../Constants/index"
+import {Clientaudiophile,Clientmaker, Clientmeet, Heromobile, Herodesktop, Clientdatabiz} from "../../Constants/index"
 function Hero() {
 
   return (
